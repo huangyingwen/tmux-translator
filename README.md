@@ -7,7 +7,7 @@
 ## Requirements
 
 - tmux >= 3.2
-- [skywind3000/translator#requirements](https://github.com/skywind3000/translator#requirements)
+- [soimort/translate-shell](https://github.com/soimort/translate-shell)
 
 ## Install via [TPM](https://github.com/tmux-plugins/tpm/)
 
@@ -28,28 +28,25 @@ To close the popup window, press Enter or Ctrl-C.
 To customize this plugin:
 
 ```tmux
-# the key to trigger translation
+# 触发划词翻译的键
 set -g @tmux-translator "t"
 
-# the width of popup window
-set -g @tmux-translator-width "38%"
+# 浮动窗口宽度
+set -g @tmux-translator-width "50%"
 
-# the height of popup window
-set -g @tmux-translator-height "38%"
+# 浮动窗口高度
+set -g @tmux-translator-height "50%"
 
-# translate from
-set -g @tmux-translator-from "en"
+# 翻译到什么语言
+set -g @tmux-translator-to ":zh"
 
-# translate to
-set -g @tmux-translator-to "zh"
-
-# engine
-set -g @tmux-translator-engine "google"
-# multiple engines
-set -g @tmux-translator-engine "google|ciba|youdao"
+# 翻译引擎
+set -g @tmux-translator-engine "auto"
 ```
 
-See [skywind3000/translator#engines](https://github.com/skywind3000/translator#engines) for all available engines.
+All translatable languages are listed here [soimort/translate-shell?tab=readme-ov-file#code-list](https://github.com/soimort/translate-shell?tab=readme-ov-file#code-list)
+
+Execute `trans -S` from the command line to view supported translation engines
 
 # More plugins
 
@@ -57,7 +54,4 @@ See [skywind3000/translator#engines](https://github.com/skywind3000/translator#e
 
 # License
 
-For the code in the `/engine` directory, see [skywind3000/translator](https://github.com/skywind3000/translator).
-
-Other code is distributed under [MIT](./LICENSE) license.
-
+Code is distributed under [MIT](./LICENSE) license.

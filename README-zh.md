@@ -5,14 +5,14 @@
 ## 依赖
 
 - tmux >= 3.2
-- [skywind3000/translator#requirements](https://github.com/skywind3000/translator#requirements)
+- [soimort/translate-shell](https://github.com/soimort/translate-shell)
 
 ## 通过 [TPM](https://github.com/tmux-plugins/tpm/) 安装
 
 把这一行添加到 `~/.tmux.conf`
 
 ```tmux
-set -g @plugin 'sainnhe/tmux-translator'
+set -g @plugin 'huangyingwen/tmux-translator'
 ```
 
 重新加载配置，然后按 `prefix` + `I`
@@ -28,24 +28,21 @@ set -g @plugin 'sainnhe/tmux-translator'
 set -g @tmux-translator "t"
 
 # 浮动窗口宽度
-set -g @tmux-translator-width "38%"
+set -g @tmux-translator-width "50%"
 
 # 浮动窗口高度
-set -g @tmux-translator-height "38%"
-
-# 从什么语言翻译
-set -g @tmux-translator-from "en"
+set -g @tmux-translator-height "50%"
 
 # 翻译到什么语言
-set -g @tmux-translator-to "zh"
+set -g @tmux-translator-to ":zh"
 
 # 翻译引擎
-set -g @tmux-translator-engine "google"
-# 多个翻译引擎
-set -g @tmux-translator-engine "google|ciba|youdao"
+set -g @tmux-translator-engine "auto"
 ```
 
-这里列出了所有可用引擎：[skywind3000/translator#engines](https://github.com/skywind3000/translator#engines)
+这里列出了所有可翻译的语言 [soimort/translate-shell?tab=readme-ov-file#code-list](https://github.com/soimort/translate-shell?tab=readme-ov-file#code-list)
+
+通过命令行执行 `trans -S` 查看可支持的翻译引擎
 
 # 更多插件
 
@@ -53,7 +50,4 @@ set -g @tmux-translator-engine "google|ciba|youdao"
 
 # 许可
 
-`/engine` 目录下的代码参考 [skywind3000/translator](https://github.com/skywind3000/translator)
-
-其余部分的代码以 [MIT](./LICENSE) 许可分发。
-
+代码以 [MIT](./LICENSE) 许可分发。
