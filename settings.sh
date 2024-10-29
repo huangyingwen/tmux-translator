@@ -13,7 +13,7 @@ to="@tmux-translator-to"
 default_engine="auto"
 engine="@tmux-translator-engine"
 
-default_proxy="http://127.0.0.1:7897"
+default_proxy=""
 proxy="@tmux-translator-proxy"
 
 get_tmux_option() {

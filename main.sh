@@ -41,17 +41,15 @@ get_engine() {
 }
 
 get_proxy() {
-  local key_bindings=$(get_tmux_option "$proxy" "$default_proxy")
-  local key
-  for key in $key_bindings; do
-    local value=$key
-  done
-  echo "$value"
+  local value=$(get_tmux_option "$proxy" "$default_proxy")
+  if [ -n "$value" ]; then
+    echo "-x $value"
+  fi
 }
 
 vars=$(echo "$(get_engine)" | sed "s/|/\n/g")
 while IFS= read -r line; do
-  result="${result}echo ---$line---; tmux save-buffer - | xargs -I{} trans $(get_to) -e $line -verbose -x $(get_proxy) {}; echo ''; "
+  result="${result}echo ---$line---; tmux save-buffer - | xargs -I{} trans $(get_to) -v -e $line $(get_proxy) {}; echo ''; "
 done <<<"$vars"
 result="${result}read -r"
 

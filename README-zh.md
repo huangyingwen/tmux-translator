@@ -38,6 +38,9 @@ set -g @tmux-translator-to ":zh"
 
 # 翻译引擎
 set -g @tmux-translator-engine "auto"
+
+# 设置代理
+set -g @tmux-translator-proxy "http://127.0.0.1:7890"
 ```
 
 这里列出了所有可翻译的语言 [soimort/translate-shell?tab=readme-ov-file#code-list](https://github.com/soimort/translate-shell?tab=readme-ov-file#code-list)

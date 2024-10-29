@@ -28,20 +28,23 @@ To close the popup window, press Enter or Ctrl-C.
 To customize this plugin:
 
 ```tmux
-# 触发划词翻译的键
+# Key to trigger word translation
 set -g @tmux-translator "t"
 
-# 浮动窗口宽度
+# Floating window width
 set -g @tmux-translator-width "50%"
 
-# 浮动窗口高度
+# Floating window height
 set -g @tmux-translator-height "50%"
 
-# 翻译到什么语言
+# What language to translate to
 set -g @tmux-translator-to ":zh"
 
-# 翻译引擎
+# Translation Engine
 set -g @tmux-translator-engine "auto"
+
+# Setting up the proxy
+set -g @tmux-translator-proxy "http://127.0.0.1:7890"
 ```
 
 All translatable languages are listed here [soimort/translate-shell?tab=readme-ov-file#code-list](https://github.com/soimort/translate-shell?tab=readme-ov-file#code-list)
